@@ -1,0 +1,45 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ruby-rails-postgres
+{
+    "name": "Ruby on Rails & Postgres",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    // But ONLY the dev container reference through the service above.
+    // "features": {
+    //     "ghcr.io/devcontainers/features/git:1": {
+    //         "version": "latest"
+    //     },
+    //     "ghcr.io/devcontainers/features/node:1": {
+    //         "version": "14.21.3"
+    //     }
+    // },
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // This can be used to network with other containers or the host. , 5432
+    "forwardPorts": [
+        3000,
+        5432,
+        8080
+    ],
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // Removed since it is not really reliable
+    // "postCreateCommand": "rm -rf /app/tmp/pids/server.pid && bundle install && bundle exec rdbg -n --open --host 0.0.0.0 --port 12345 -c -- bin/rails server -p 3000 -b 0.0.0.0",
+    // Configure tool-specific properties.
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-docker",
+                "GitHub.copilot",
+                "GitHub.copilot-chat",
+                "humao.rest-client",
+                "KoichiSasada.vscode-rdbg",
+                "Shopify.ruby-lsp",
+                "hollowtree.vue-snippets",
+                "Vue.volar"
+            ]
+        }
+    }
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    // "remoteUser": "root"
+}

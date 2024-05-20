@@ -1,0 +1,2 @@
+CREATE USER dbUser WITH PASSWORD 'password' CREATEDB;
+CREATE DATABASE db-development WITH OWNER dbUser;
