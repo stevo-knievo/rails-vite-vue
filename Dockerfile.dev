@@ -1,0 +1,29 @@
+FROM ruby:3.1.5-bookworm
+
+# Install common packages
+RUN apt update && export DEBIAN_FRONTEND=noninteractive \
+  && apt -y install --no-install-recommends dirmngr ca-certificates software-properties-common apt-transport-https lsb-release curl gnupg2
+
+####### Start install Node 20
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+
+RUN apt update && export DEBIAN_FRONTEND=noninteractive \
+  && apt -y install --no-install-recommends nodejs
+####### End install Node 20
+
+####### Start install postgresql-client-16
+# Install postgresql-client-16 here since it doesn't work with devcontainers features ->ghcr.io/devcontainers-contrib/features/apt-packages
+RUN curl -fsSl https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor | tee /usr/share/keyrings/postgresql.gpg > /dev/null
+
+RUN echo "deb [arch=amd64,arm64,ppc64el signed-by=/usr/share/keyrings/postgresql.gpg] http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" | tee /etc/apt/sources.list.d/postgresql.list
+
+RUN apt update && apt -y install postgresql-client-16
+####### End install postgresql-client-16
+
+WORKDIR /app
+COPY package* ./
+RUN npm install
+
+COPY Gemfile* ./
+ENV BUNDLE_PATH /gems
+RUN bundle install

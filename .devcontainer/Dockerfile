@@ -36,6 +36,8 @@ RUN su vscode -c "echo 'alias rrestart=\"cd /workspaces/rails-vite-vue && kill -
 RUN su vscode -c "echo 'alias rkill=\"kill -9 \`cat /workspaces/rails-vite-vue/tmp/pids/server.pid\`\"' >> ~/.bashrc"
 RUN su vscode -c "echo 'alias ll=\"ls -lah\"' >> ~/.bashrc"
 
-COPY Gemfile* ./
+COPY package* ./
+RUN npm install
 
+COPY Gemfile* ./
 RUN su vscode -c "bundle install"
