@@ -9,8 +9,9 @@ services:
       - ../..:/workspaces:cached
     environment:
       RAILS_ENV: development
-      VITE_RUBY_HOST: vite
-    # Overrides default command so things don't shut down after the process ends.
+      # TODO: https://vitejs.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated
+      VITE_CJS_IGNORE_WARNING: true
+      # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
     # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
     network_mode: service:db
