@@ -26,3 +26,8 @@
 1. `bundle add vite_rails`
 2. `bundle exec vite install`
 3. `npm -i vite-plugin-full-reload @vitejs/plugin-vue`
+
+# Debug Vite container
+```shell
+docker logs --follow <container ID>
+```

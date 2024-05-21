@@ -19,6 +19,7 @@
     // This can be used to network with other containers or the host. , 5432
     "forwardPorts": [
         3000,
+        3036,
         5432,
         8080
     ],
