@@ -27,14 +27,36 @@ console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify
 // Example: Import a stylesheet in app/frontend/index.css
 // import '~/index.css'
 
+
+
+import 'vuetify/dist/vuetify.min.css'
+import '/node_modules/vuetify/dist/vuetify.min.css'
+
 // Create Vue2 App
 import Vue from 'vue';
 import Shell from '@/components/Shell.vue';
+import Vuetify from 'vuetify';
+import colors from 'vuetify/lib/util/colors';
+
+Vue.use(Vuetify);
+
+const vuetify = new Vuetify({
+    theme: {
+        themes: {
+            light: {
+                primary: colors.green.darken2,
+                secondary: colors.green.lighten4,
+                accent: colors.green.accent1,
+                info: colors.green.lighten1,
+            },
+        },
+    },
+});
 
 // kickstart Vue2 app
 const app = new Vue({
     el: '#app',
-    // vuetify,
+    vuetify,
     render(h) {
         return h(Shell);
     }
