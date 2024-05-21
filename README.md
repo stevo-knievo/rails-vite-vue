@@ -31,3 +31,8 @@
 ```shell
 docker logs --follow <container ID>
 ```
+
+# Start none DevContainer docker version
+```shell
+docker-compose -f docker-compose.dev.yml up --build --force-recreate
+```
