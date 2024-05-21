@@ -9,8 +9,6 @@ services:
       - ../..:/workspaces:cached
     environment:
       RAILS_ENV: development
-      # TODO: https://vitejs.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated
-      VITE_CJS_IGNORE_WARNING: true
       VITE_RUBY_HOST: vite
       # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
