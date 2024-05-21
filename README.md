@@ -18,3 +18,6 @@
 12. run `bundle remove tubrolinks`
 13. run `bundle remove webpacker`
 14. remove all devDependencies/dependencies from the package.json file
+
+# Create a dummy page
+1. `rails g controller pages home`
