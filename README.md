@@ -36,3 +36,13 @@ docker logs --follow <container ID>
 ```shell
 docker-compose -f docker-compose.dev.yml up --build --force-recreate
 ```
+
+## More infos:
+- [Vite Ruby](https://vite-ruby.netlify.app/)
+- [Vue And Vite With Hot Reloading In Ruby On Rails 7](https://www.youtube.com/watch?v=PzyWQm58tlc)
+- [WSL Localhost Docker Apps with Rails and Vite](https://www.youtube.com/watch?v=w_e_TZnJ7DA), [Code](https://github.com/Deanout/docker_localhost)
+- [Vite Rails running on Docker](https://github.com/ElMassimo/vite_rails_docker_example)
+- [Migrating from (Rails) Webpack(er) to Vite](https://www.stefanwienert.de/blog/2022/07/11/migrating-from-webpacker-to-vite-rails/)
+- [Vue on Rails](https://medium.com/@oscarreciogonzalez/vue-on-rails-15686b85b1d3)
+- [An example Rails 7 app](https://github.com/zakariaf/rails-base-app?tab=readme-ov-file#docker)
+- [Discord - Vite-Ruby](https://discord.com/channels/1198693588196925541/1198966615958634507)
