@@ -15,7 +15,7 @@
 9. remove `browserslistrc`
 10. remove `app/javascript`
 11. comment `Rails.application.config.assets.paths << Rails.root.join('node_modules')` in `config/initializers/assets.rb`
-12. run `bundle remove tubrolinks`
+12. run `bundle remove turbolinks`
 13. run `bundle remove webpacker`
 14. remove all devDependencies/dependencies from the package.json file
 
@@ -25,7 +25,7 @@
 # Add Vite and Vue 3
 1. `bundle add vite_rails`
 2. `bundle exec vite install`
-3. `npm -i vite-plugin-full-reload @vitejs/plugin-vue`
+3. `npm i vite-plugin-full-reload @vitejs/plugin-vue`
 
 # Debug Vite container
 ```shell
